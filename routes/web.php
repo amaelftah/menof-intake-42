@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController; //== require
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    $name = 'ahmed';
-    $articles = ['laravel', 'php', 'js'];
-
-    return view('test',[
-        'name' => $name,
-        'articles' => $articles,
-    ]);
-});
+Route::get('/test', [TestController::class, 'test']);
