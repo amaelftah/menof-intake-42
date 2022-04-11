@@ -25,6 +25,8 @@ class PostController extends Controller
 
     public function store()
     {
+        //some logic to store data in db
+        //redirect to /posts
         return 'we are in store';
     }
 }
