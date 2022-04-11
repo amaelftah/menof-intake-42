@@ -19,11 +19,11 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function () {
-    $routeName = 'ahmed';
-    $routeArticles = ['laravel', 'php', 'js'];
+    $name = 'ahmed';
+    $articles = ['laravel', 'php', 'js'];
 
     return view('test',[
-        'name' => $routeName,
-        'articles' => $routeArticles,
+        'name' => $name,
+        'articles' => $articles,
     ]);
 });
