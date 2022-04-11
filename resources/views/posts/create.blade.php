@@ -20,7 +20,7 @@
         </div>
       </nav>
     <div class="container">
-      <form method="POST" action="/posts">
+      <form method="POST" action="{{route('posts.store')}}">
         @csrf
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Title</label>
