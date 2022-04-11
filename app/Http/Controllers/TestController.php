@@ -8,12 +8,11 @@ class TestController extends Controller
 {
     public function test()
     {
-        $name = 'ahmed';
-        $articles = ['laravel', 'php', 'js'];
+        return view('test');
+    }
 
-        return view('test',[
-            'name' => $name,
-            'articles' => $articles,
-        ]);
+    public function createForm()
+    {
+        return view('form');
     }
 }

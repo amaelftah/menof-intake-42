@@ -20,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get('/test', [TestController::class, 'test']);
+Route::get('/create-form', [TestController::class, 'createForm']);

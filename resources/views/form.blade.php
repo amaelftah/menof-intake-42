@@ -20,34 +20,25 @@
         </div>
       </nav>
     <div class="container">
-        <div class="text-center">
-            <button type="button" class="mt-4 btn btn-success">Create Post</button>
-        </div>
-        <table class="table mt-4">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Title</th>
-                <th scope="col">Posted By</th>
-                <th scope="col">Created At</th>
-                <th scope="col">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>
-                    <a href="#" class="btn btn-info">View</a>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
-                </td>
-              </tr>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
 
-            </tbody>
-          </table>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Post Creator</label>
+            <select class="form-control">
+                <option>Ahmed</option>
+            </select>
+       </div>
+
+          <div class="mb-3">
+                <button class="btn btn-success">Create Post</button>
+          </div>
 
     </div>
 
@@ -55,4 +46,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 </body>
 </html>
-
