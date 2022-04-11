@@ -20,6 +20,8 @@
         </div>
       </nav>
     <div class="container">
+      <form method="POST" action="/posts">
+        @csrf
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Title</label>
             <input type="text" class="form-control" id="exampleFormControlInput1">
@@ -37,9 +39,9 @@
        </div>
 
           <div class="mb-3">
-                <button class="btn btn-success">Create Post</button>
+                <button type="submit" class="btn btn-success">Create Post</button>
           </div>
-
+        </form>
     </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
