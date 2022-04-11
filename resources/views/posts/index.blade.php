@@ -34,18 +34,19 @@
               </tr>
             </thead>
             <tbody>
+            @foreach ( $allPosts as $post)
               <tr>
-                <td>1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>{{$post['id']}}</th>
+                <td>{{$post['title']}}</td>
+                <td>{{$post['posted_by']}}</td>
+                <td>{{$post['created_at']}}</td>
                 <td>
                     <a href="#" class="btn btn-info">View</a>
                     <a href="#" class="btn btn-primary">Edit</a>
                     <a href="#" class="btn btn-danger">Delete</a>
                 </td>
               </tr>
-
+              @endforeach
             </tbody>
           </table>
 
@@ -55,4 +56,3 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 </body>
 </html>
-
