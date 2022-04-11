@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // return 'we are in files';
     return view('welcome');
+});
+
+Route::get('/test', function () {
+    return view('test');
 });
