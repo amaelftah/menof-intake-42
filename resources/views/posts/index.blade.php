@@ -17,11 +17,11 @@
               </tr>
             </thead>
             <tbody>
-            @foreach ( $allPosts as $post)
+            @foreach ($allPosts as $post)
               <tr>
-                <td>{{$post['id']}}</th>
-                <td>{{$post['title']}}</td>
-                <td>{{$post['posted_by']}}</td>
+                <td>{{$post->id}}</th>
+                <td>{{$post->title}}</td>
+                <td>{{$post->posted_by}}</td>
                 <td>{{$post['created_at']}}</td>
                 <td>
                     <a href="{{route('posts.show', ['post' => $post['id']])}}" class="btn btn-info">View</a>
