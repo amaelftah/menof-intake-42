@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\User;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $posts = [
-            ['id' => 1, 'title' => 'first post', 'posted_by' => 'ahmed', 'created_at' => '2022-04-11'],
-            ['id' => 2, 'title' => 'second post', 'posted_by' => 'mohamed', 'created_at' => '2022-04-11'],
-        ];
+        //we need a model class that retrieves data from posts table
+        $posts = Post::all();
+
+        // $posts = [
+        //     ['id' => 1, 'title' => 'first post', 'posted_by' => 'ahmed', 'created_at' => '2022-04-11'],
+        //     ['id' => 2, 'title' => 'second post', 'posted_by' => 'mohamed', 'created_at' => '2022-04-11'],
+        // ];
         // dd($posts); //stop execution and dump the variable
         return view('posts.index',[
             'allPosts' => $posts,
@@ -20,18 +25,42 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+        $users = User::all();
+
+        //query to get all users
+        return view('posts.create',[
+            'users' => $users,
+        ]);
     }
 
     public function store()
     {
-        //some logic to store data in db
+        //get me the request data
+        // $data = $_REQUEST; don't use plain php in laravel framework
+        $data = request()->all();
+        // $title = request()->title;
+
+        //store the request data in the db
+        Post::create([
+            'title' => $data['title'],
+            'description' => $data['description'],
+            'user_id' => $data['post_creator'],
+            'some_column' => 'some value',
+            'x' => 'asd',
+            'y' => 'askdhjashd',
+        ]);
+
         //redirect to /posts
-        return 'we are in store';
+        return to_route('posts.index');
     }
 
     public function show($post)
     {
+        //select * from posts where id = 1
+        $dbPost = Post::find($post); //App\Models\Post
+        $dbPost2 = Post::where('id', 1)->first();
+
+        dd($dbPost2);
         // dd($post);
         return view('posts.show');
     }
