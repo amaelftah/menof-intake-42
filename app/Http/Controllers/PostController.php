@@ -35,9 +35,22 @@ class PostController extends Controller
 
     public function store()
     {
-        //some logic to store data in db
+        //get me the request data
+        // $data = $_REQUEST; don't use plain php in laravel framework
+        $data = request()->all();
+        // $title = request()->title;
+
+        //store the request data in the db
+        Post::create([
+            'title' => $data['title'],
+            'description' => $data['description'],
+            'some_column' => 'some value',
+            'x' => 'asd',
+            'y' => 'askdhjashd',
+        ]);
+
         //redirect to /posts
-        return 'we are in store';
+        return to_route('posts.index');
     }
 
     public function show($post)
