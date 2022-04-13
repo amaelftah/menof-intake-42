@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
+use App\Http\Requests\StorePostRequest;
 
 class PostController extends Controller
 {
@@ -33,16 +34,16 @@ class PostController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(StorePostRequest $request)
     {
         //validate the data
-        request()->validate([
-            'title' => ['required', 'min:3'],
-            'description' => ['required', 'min:5'],
-        ],[
-            'title.required' => 'my message',
-            'title.min' => 'override default min message',
-        ]);
+        // request()->validate([
+        //     'title' => ['required', 'min:3'],
+        //     'description' => ['required', 'min:5'],
+        // ],[
+        //     'title.required' => 'my message',
+        //     'title.min' => 'override default min message',
+        // ]);
 
         //get me the request data
         // $data = $_REQUEST; don't use plain php in laravel framework
