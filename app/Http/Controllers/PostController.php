@@ -35,6 +35,15 @@ class PostController extends Controller
 
     public function store()
     {
+        //validate the data
+        request()->validate([
+            'title' => ['required', 'min:3'],
+            'description' => ['required', 'min:5'],
+        ],[
+            'title.required' => 'my message',
+            'title.min' => 'override default min message',
+        ]);
+
         //get me the request data
         // $data = $_REQUEST; don't use plain php in laravel framework
         $data = request()->all();
