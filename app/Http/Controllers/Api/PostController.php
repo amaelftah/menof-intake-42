@@ -39,6 +39,6 @@ class PostController extends Controller
             'user_id' => $data['post_creator'],
         ]);
 
-        return $post;
+        return new PostResource($post);
     }
 }
