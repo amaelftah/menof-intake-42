@@ -45,4 +45,8 @@ Route::get('/auth/callback', function () {
     $user = Socialite::driver('github')->user();
  dd($user);
     // $user->token
+
+    //do some logic to make a request to an endpoint on github
+    //pseudo code example
+    // Http::get('/issues')->setHeader('Authorization','Bearer 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');
 });
